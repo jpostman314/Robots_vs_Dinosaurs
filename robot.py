@@ -8,5 +8,9 @@ class Robot:
         self.health = int(health)
     
     def attack(self, dinosaur):
+        self.active_weapon = Weapon("Laser", 10)
         dinosaur.health = dinosaur.health - int(self.active_weapon.attack_power)
-        return dinosaur.health
+        print(f"{dinosaur.name}'s remaining health is {dinosaur.health}")
+        if dinosaur.health <= 0:
+            print(f"{dinosaur.name} has died!")
+        

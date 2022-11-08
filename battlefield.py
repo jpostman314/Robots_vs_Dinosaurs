@@ -1,6 +1,6 @@
 from robot import Robot
 from dinosaur import Dinosaur
-from weapon import Weapon
+
 
 
 
@@ -8,9 +8,11 @@ from weapon import Weapon
 class Battlefield:
 
     def __init__(self):
-        self.robot = Robot()
-        self.dinosaur = Dinosaur()
-    
+        self.robot = Robot("Murphy", 100, "Laser")
+        self.dinosaur = Dinosaur("Linda", 25, 100)
+        
+
+
     def run_game(self):
         self.display_welcome()
         self.battle_phase()
@@ -21,10 +23,23 @@ class Battlefield:
     
     def display_welcome(self):
         print("Welcome to a battle like you've never seen berfore. Robot vs. Dinosuar!!!!")
-        pass
+        
     
     def battle_phase(self):
-        pass
+        turn_counter = 0
+        
+        while self.robot.health >0 and self.dinosaur.health >0:
+            if (turn_counter % 2) == 0:
+                print(f"{self.robot.name} attacked {self.dinosaur.name}!")
+                self.robot.attack(self.dinosaur)
+                turn_counter += 1
+            else:
+                print(f"{self.dinosaur.name} attacked {self.robot.name}!")
+                self.dinosaur.attack_robot(self.robot)
+                turn_counter += 1
+                
 
     def display_winner(self):
         pass
+
+
