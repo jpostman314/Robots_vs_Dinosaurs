@@ -30,16 +30,27 @@ class Battlefield:
         
         while self.robot.health >0 and self.dinosaur.health >0:
             if (turn_counter % 2) == 0:
+                print("")
                 print(f"{self.robot.name} attacked {self.dinosaur.name}!")
+                print("")
                 self.robot.attack(self.dinosaur)
                 turn_counter += 1
             else:
+                print("")
                 print(f"{self.dinosaur.name} attacked {self.robot.name}!")
+                print("")
                 self.dinosaur.attack_robot(self.robot)
                 turn_counter += 1
                 
 
     def display_winner(self):
-        pass
+        if self.robot.health > 0:
+            print("")
+            print(f"{self.robot.name} is the winner!")
+            print("")
+        elif self.dinosaur.health > 0:
+            print("")
+            print(f"{self.dinosaur.name} is the winner!")
+            print("")
 
 
