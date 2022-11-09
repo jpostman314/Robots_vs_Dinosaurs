@@ -28,7 +28,7 @@ class Battlefield:
     def battle_phase(self):
         turn_counter = 0
         
-        while self.robot.health >0 and self.dinosaur.health >0:
+        while self.robot.health > 0 and self.dinosaur.health >0:
             if (turn_counter % 2) == 0:
                 print("")
                 print(f"{self.robot.name} attacked {self.dinosaur.name}!")
