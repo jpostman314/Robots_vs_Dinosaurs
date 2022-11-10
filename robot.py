@@ -18,6 +18,8 @@ class Robot:
         self.active_weapon = self.weapons_list[int(user_selection)-1]
         dinosaur.health = dinosaur.health - int(self.active_weapon.attack_power)
         print("")
+        print(f"{dinosaur.name} was attacked with {self.weapons_list[int(user_selection)-1].name}!")
+        print("")
         print(f"{dinosaur.name}'s remaining health is {dinosaur.health}")
         print("")
         if dinosaur.health <= 0:

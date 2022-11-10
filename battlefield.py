@@ -8,8 +8,8 @@ from dinosaur import Dinosaur
 class Battlefield:
 
     def __init__(self):
-        self.robot = Robot("Murphy", 100, "Laser")
-        self.dinosaur = Dinosaur("Linda", 25, 100)
+        self.robot = Robot("Robot Murphy", 100, "Laser")
+        self.dinosaur = Dinosaur("Dinosaur Linda", 25, 100)
         
 
 
@@ -31,7 +31,7 @@ class Battlefield:
         while self.robot.health > 0 and self.dinosaur.health >0:
             if (turn_counter % 2) == 0:
                 print("")
-                print(f"{self.robot.name} attacked {self.dinosaur.name}!")
+                print(f"{self.robot.name} is attacking {self.dinosaur.name}!")
                 print("")
                 self.robot.attack(self.dinosaur)
                 turn_counter += 1
